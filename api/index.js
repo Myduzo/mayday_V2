@@ -1,17 +1,16 @@
-const express = require("express");
+import express from "express";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+import helmet from "helmet";
+import morgan from "morgan";
+import multer from "multer";
+import {router as userRoute} from "./routes/users.js";
+import {router as authRoute} from "./routes/auth.js";
+import {router as postRoute} from "./routes/posts.js";
+import path from "path";
+
 const app = express();
-const mongoose = require("mongoose");
-const dotenv = require("dotenv");
-const helmet = require("helmet");
-const morgan = require("morgan");
-const multer = require("multer");
-const userRoute = require("./routes/users");
-const authRoute = require("./routes/auth");
-const postRoute = require("./routes/posts");
-const conversationRoute = require("./routes/conversations");
-const messageRoute = require("./routes/messages");
 const router = express.Router();
-const path = require("path");
 
 dotenv.config();
 
@@ -22,7 +21,11 @@ mongoose.connect(
     console.log("Connected to MongoDB");
   }
 );
-app.use("/images", express.static(path.join(__dirname, "public/images")));
+// app.use("/images", express.static(path.join(__dirname, "public/images")));
+
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
 
 //middleware
 app.use(express.json());
@@ -50,8 +53,6 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
-app.use("/api/conversations", conversationRoute);
-app.use("/api/messages", messageRoute);
 
 app.listen(8800, () => {
   console.log("Backend server is running!");

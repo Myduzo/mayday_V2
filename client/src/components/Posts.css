@@ -1,0 +1,125 @@
+body #posts {
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+#posts img {
+  max-width: 100%;
+  display: block;
+}
+#posts ul {
+  list-style: none;
+}
+
+/* Utilities */
+#posts .card::after,
+#posts .card img {
+  border-radius: 50%;
+}
+
+#posts .card {
+  padding: 2.5rem 2rem;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, .5);
+  max-width: 500px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, .15);
+  margin: 1rem;
+  position: relative;
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
+#posts .card::before,
+#posts .card::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+}
+#posts .card::before {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #FFF;
+  border-radius: 10px;
+  top: -.7rem;
+  left: -.7rem;
+}
+#posts .card::after {
+  height: 15rem;
+  width: 15rem;
+  background-color: #4172f5aa;
+  top: -8rem;
+  right: -8rem;
+  box-shadow: 2rem 6rem 0 -3rem #FFF
+}
+
+#posts .card img {
+  width: 8rem;
+  min-width: 80px;
+  box-shadow: 0 0 0 5px #FFF;
+}
+
+#posts .infos {
+  margin-left: 1.5rem;
+}
+
+.star {
+  width: 40px;
+  color: #00b49c;
+  margin-left: 5rem;
+}
+
+.rate p {
+  margin-top: 3rem;
+  font-size: 20px;
+  color: rgba(34, 34, 34, 0.623);
+}
+
+.name {
+  margin-bottom: 1rem;
+}
+.name h2 {
+  font-size: 1.3rem;
+}
+.name h4 {
+  font-size: .8rem;
+  color: #333
+}
+
+#posts .text {
+  font-size: .9rem;
+  margin-bottom: 1rem;
+}
+
+#posts .links button {
+  font-family: 'Poppins', sans-serif;
+  min-width: 120px;
+  padding: .5rem;
+  border: 1px solid #222;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all .25s linear;
+}
+#posts .links .follow,
+#posts .links .view:hover {
+  background-color: #222;
+  color: #FFF;
+}
+#posts .links .view,
+#posts .links .follow:hover{
+  background-color: transparent;
+  color: #222;
+}
+
+@media screen and (max-width: 450px) {
+  #posts .card {
+    display: block;
+  }
+  #posts .infos {
+    margin-left: 0;
+    margin-top: 1.5rem;
+  }
+  #posts .links button {
+    min-width: 100px;
+  }
+}
