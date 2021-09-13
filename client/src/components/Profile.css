@@ -1,0 +1,60 @@
+#profileCover {
+  background-color: #2F5061;
+  padding-bottom: 15rem;
+}
+
+.profilePic {
+  margin-top: 20rem;
+}
+
+.profilePic img {
+  margin: 10px;
+}
+
+#profileName {
+  padding-top: 7rem;
+}
+
+#bioColor {
+  color: #768283;
+}
+
+.profileLinks {
+  padding-top: 10rem;
+}
+
+#rate {
+  color: #ffc400;
+  font-size: xx-large;
+  margin-left: 8rem;
+}
+
+#profileRate h5 {
+  margin-top: -5px;
+  margin-left: 10rem;
+}
+
+#profile .links button {
+  font-family: 'Poppins', sans-serif;
+  min-width: 120px;
+  padding: .5rem;
+  border: 1px solid #222;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all .25s linear;
+}
+#profile .links .view:hover {
+  background-color: #222;
+  color: #FFF;
+}
+#profile .links .view {
+  background-color: transparent;
+  color: #222;
+}
+
+@media screen and (max-width: 768px) {
+  .profileLinks {
+    padding-top: 1rem;
+  }
+}

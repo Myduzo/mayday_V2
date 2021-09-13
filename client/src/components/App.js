@@ -3,6 +3,8 @@ import Posts from "./Posts";
 import Home from "./home/Home";
 import Signup from "./Signup";
 import Login from "./Login";
+import Profile from "./Profile";
+import Messenger from "./Messenger";
 import {
   BrowserRouter as Router,
   Switch,
@@ -17,14 +19,18 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path="/">
-            {user ? <Home /> : <Signup />}
+          <Route exact path="/" component={Home}>
+            {/* {user ? <Home /> : <Signup />} */}
           </Route>
-          <Route path="/login">{user ? <Redirect to="/" /> : <Login />}</Route>
+          <Route path="/login">
+            {user ? <Redirect to="/" /> : <Login />}
+          </Route>
           <Route path="/signup">
             {user ? <Redirect to="/" /> : <Signup />}
           </Route>
           <Route path="/posts" component={Posts}></Route>
+          <Route path="/profile" component={Profile}></Route>
+          <Route path="/messenger" component={Messenger}></Route>
         </Switch>
       </Router>
     </div>

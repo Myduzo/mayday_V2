@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.css'
+import facebook from "../../images/facebook.png";
+import instagram from "../../images/instagram.png";
+import twitter from "../../images/twitter.png";
 
 export default function Footer() {
   return (
@@ -51,10 +54,10 @@ export default function Footer() {
               &copy; 2021 <strong><span>MAYDAY</span></strong>. All Rights Reserved
             </div>
           </div>
-          <div className="social-links text-center text-md-right pt-3 pt-md-6">
-            <a href="#" className="twitter"><i className="bx bxl-twitter"></i></a>
-            <a href="#" className="facebook"><i className="bx bxl-facebook"></i></a>
-            <a href="#" className="instagram"><i className="bx bxl-instagram"></i></a>
+          <div className="social-links text-center text-md-right pt-md-6">
+            <a href="#"><img src={facebook} width="28px" /></a>
+            <a href="#" className="mx-4"><img src={instagram} width="28px" /></a>
+            <a href="#"><img src={twitter} width="28px" /></a>
           </div>
       </div>
 

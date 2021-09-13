@@ -1,0 +1,21 @@
+.userPic {
+  margin-top: -10px;
+  margin-right: 8.5rem;
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+
+
+@media screen and (max-width: 1000px) {
+  .userPic ul {
+    padding-top: 3.5rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .userPic {
+    margin-top: 1rem;
+  }
+}

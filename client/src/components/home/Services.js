@@ -32,7 +32,7 @@ export default function Services() {
               </svg>
             </div>
             <h2 className="fw-bold">Cleaning</h2>
-            <p>Installs and repairs electrical wiring, systems, and fixtures in buildings. Installs conduits and pipes to house electrical wires and cables. Ensures piping complies with electrical codes. Installs circuit breakers and other electrical hardware and connects wiring to them.</p>
+            <p>Clean, stock and supply designated facility areas. Dusting, sweeping, vacuuming, mopping. Carry out deep cleaning and detailed cleaning tasks. Notify management of deficiencies or repairs required.</p>
             <p><a className="btn text-white" style={{backgroundColor: "#E57F84"}} href="#">See cleaners »</a></p>
           </div>
 
@@ -44,7 +44,7 @@ export default function Services() {
               </svg>
             </div>
             <h2 className="fw-bold">Plumbing</h2>
-            <p>Installs and repairs electrical wiring, systems, and fixtures in buildings. Installs conduits and pipes to house electrical wires and cables. Ensures piping complies with electrical codes. Installs circuit breakers and other electrical hardware and connects wiring to them.</p>
+            <p>Assemble, install, maintain, and pressure test all pipes, fittings, and fixtures of heating, water, drainage, sprinkler, and gas systems according to specifications and plumbing codes. ... Repair dishwashers and kitchen equipment that incorporate gas or water consumption.</p>
             <p><a className="btn" style={{backgroundColor: "#F4EAE6"}} href="#">See plumbers »</a></p>
           </div>
 
@@ -56,7 +56,7 @@ export default function Services() {
               </svg>
             </div>
             <h2 className="fw-bold">Babysitting </h2>
-            <p>Installs and repairs electrical wiring, systems, and fixtures in buildings. Installs conduits and pipes to house electrical wires and cables. Ensures piping complies with electrical codes. Installs circuit breakers and other electrical hardware and connects wiring to them.</p>
+            <p className="text-break">Taking full responsibility for the health and welfare of children when their parents are away. Sitters are entrusted with every aspect of childcare from meals to hygiene to educational activities. Other important duties include discipline and keeping records of children's daily activities.</p>
             <p><a className="btn text-white" style={{backgroundColor: "#4297A0"}} href="#">See babysitters »</a></p>
           </div>
         </div>

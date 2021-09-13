@@ -4,8 +4,17 @@ import loginIcon from "../../images/loginIcon.png";
 import signupIcon from "../../images/signupIcon.png";
 import postsIcon from "../../images/postsIcon.png";
 import { Link } from "react-router-dom";
+import './Header.css'
+import AppsRoundedIcon from '@material-ui/icons/AppsRounded';
+import PeopleAltRoundedIcon from '@material-ui/icons/PeopleAltRounded';
+import MarkunreadMailboxRoundedIcon from '@material-ui/icons/MarkunreadMailboxRounded';
+import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
 
 function Header() {
+  function logout() {
+    localStorage.clear();
+    window.location.href = '/';
+  }
 
   return (
     <div>
@@ -47,53 +56,43 @@ function Header() {
                     className="nav-link active"
                     aria-current="page"
                   >
-                    <img
-                      src={homeIcon}
-                      className="me-2 mb-1"
-                      width="16"
-                      height="16"
-                    />
+                    <HomeRoundedIcon className="me-2 mb-1" />
+
                     Home
                   </Link>
                 </li>
                 <li className="nav-item px-1">
                   <Link to="/posts" className="nav-link link-dark">
-                    <img
-                      src={postsIcon}
-                      className="me-2 mb-1"
-                      width="19"
-                      height="19"
-                    />
+                    <MarkunreadMailboxRoundedIcon className="me-2 mb-1" />
                     Posts
                   </Link>
                 </li>
                 <li className="nav-item px-1">
-                  <Link
-                    to="/login"
-                    className="nav-link link-dark"
-                  >
-                    <img
-                      src={loginIcon}
-                      className="me-2 mb-1"
-                      width="16"
-                      height="16"
-                    />
-                    Log In
+                  <Link to="/" className="nav-link link-dark">
+                    <AppsRoundedIcon className="me-2 mb-1" />
+                    Services
                   </Link>
                 </li>
                 <li className="nav-item px-1">
-                  <Link
-                    to="/signup"
-                    className="nav-link link-dark"
-                  >
-                    <img
-                      src={signupIcon}
-                      className="me-2 mb-1"
-                      width="16"
-                      height="16"
-                    />
-                    Sign up
+                  <Link to="/" className="nav-link link-dark">
+                    <PeopleAltRoundedIcon className="me-2 mb-1" />
+                    About us
                   </Link>
+                </li>
+                <li class="dropdown nav-item px-1 userPic">
+                  <a class="btn dropdown-toggle position-absolute" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img
+                      src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDB8fGZhY2V8ZW58MHwyfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                      className="me-2 rounded-circle"
+                      width="43"
+                      height="43"
+                    />
+                  </a>
+
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><Link to="/profile" class="dropdown-item">Profile</Link></li>
+                    <li><a class="dropdown-item" href="#" onClick={logout}>Log out</a></li>
+                  </ul>
                 </li>
               </ul>
             </div>
