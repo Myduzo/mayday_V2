@@ -3,11 +3,12 @@ import { Form, Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { loginCall } from "../apiCalls";
 import { AuthContext } from "../context/AuthContext";
+import { CircularProgress } from "@material-ui/core"
 
 export default function Login() {
+  const { user, isFetching, error, dispatch } = useContext(AuthContext);
   const email = useRef();
   const password = useRef();
-  const { isFetching, dispatch } = useContext(AuthContext);
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -16,6 +17,7 @@ export default function Login() {
       dispatch
     );
   };
+  console.log(user)
 
   return (
     <div
@@ -33,17 +35,28 @@ export default function Login() {
           <Form onSubmit={handleClick}>
             <Form.Group id="email">
               <Form.Label>Email</Form.Label>
-              <Form.Control type="email" required ref={email}></Form.Control>
+              <Form.Control
+                type="email"
+                required
+                ref={email}
+                placeholder="Email">
+              </Form.Control>
             </Form.Group>
             <Form.Group id="password">
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" required minLength="6" ref={password}></Form.Control>
+              <Form.Control
+                type="password"
+                required
+                minLength="6"
+                ref={password}
+                placeholder="Password">
+              </Form.Control>
             </Form.Group>
             <Button
               className="d-flex justify-content-center align-items-center w-50 mt-4 mx-auto"
               type="submit"
             >
-              Log In
+              {isFetching ? <CircularProgress color="white" size="20px"/> : "LogIn"}
             </Button>
           </Form>
           <div className="w-100 text-center mt-2">

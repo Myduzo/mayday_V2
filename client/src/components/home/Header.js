@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import homeIcon from "../../images/homeIcon.png";
 import loginIcon from "../../images/loginIcon.png";
 import signupIcon from "../../images/signupIcon.png";
@@ -9,8 +9,13 @@ import AppsRoundedIcon from '@material-ui/icons/AppsRounded';
 import PeopleAltRoundedIcon from '@material-ui/icons/PeopleAltRounded';
 import MarkunreadMailboxRoundedIcon from '@material-ui/icons/MarkunreadMailboxRounded';
 import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
+import { AuthContext } from "../../context/AuthContext";
+import noAvatar from "../../images/noAvatar.png";
+
 
 function Header() {
+  const { user } = useContext(AuthContext);
+  
   function logout() {
     localStorage.clear();
     window.location.href = '/';
@@ -82,7 +87,7 @@ function Header() {
                 <li class="dropdown nav-item px-1 userPic">
                   <a class="btn dropdown-toggle position-absolute" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                     <img
-                      src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDB8fGZhY2V8ZW58MHwyfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                      src={user.profilePicture ? user.profilePicture : noAvatar}
                       className="me-2 rounded-circle"
                       width="43"
                       height="43"
@@ -90,7 +95,7 @@ function Header() {
                   </a>
 
                   <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <li><Link to="/profile" class="dropdown-item">Profile</Link></li>
+                    <li><Link to={`/profile/${user.phone}`} class="dropdown-item">Profile</Link></li>
                     <li><a class="dropdown-item" href="#" onClick={logout}>Log out</a></li>
                   </ul>
                 </li>

@@ -10,12 +10,12 @@ const PostSchema = new mongoose.Schema(
       type: String,
       max: 500,
     },
-    img: {
+    image: {
       type: String,
     },
-    likes: {
-      type: Array,
-      default: [],
+    service: {
+      type: Number,
+      enum: [1, 2, 3, 4],
     },
   },
   { timestamps: true }

@@ -20,7 +20,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={Home}>
-            {/* {user ? <Home /> : <Signup />} */}
+            {user ? <Home /> : <Signup />}
           </Route>
           <Route path="/login">
             {user ? <Redirect to="/" /> : <Login />}
@@ -29,7 +29,9 @@ function App() {
             {user ? <Redirect to="/" /> : <Signup />}
           </Route>
           <Route path="/posts" component={Posts}></Route>
-          <Route path="/profile" component={Profile}></Route>
+          <Route path="/profile/:userId" component={Profile}>
+            <Profile />
+          </Route>
           <Route path="/messenger" component={Messenger}></Route>
         </Switch>
       </Router>

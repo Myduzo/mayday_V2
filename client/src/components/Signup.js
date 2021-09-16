@@ -16,21 +16,25 @@ export default function Signup() {
   const handleClick = async (e) => {
     e.preventDefault();
     if (passwordConf.current.value !== password.current.value) {
+      //console.log(passwordConf.current.value )
+      //console.log(password.current.value)
       passwordConf.current.setCustomValidity("Passwords don't match!");
+      //passwordConf.current.value = "";
     } else {
       const user = {
         firstName: firstName.current.value,
         lastName: lastName.current.value,
         email: email.current.value,
+        phone: phoneNumber.current.value,
         password: password.current.value,
-        phoneNumber: phoneNumber.current.value,
       };
       try {
-        await axios.post("/auth/signup", user);
+        await axios.post("/auth/register", user);
         history.push("/login");
       } catch (err) {
         console.log(err);
       }
+      console.log(user);
     }
   };
 
@@ -61,11 +65,11 @@ export default function Signup() {
             </Form.Group>
             <Form.Group id="password">
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" required ref={password}></Form.Control>
+              <Form.Control type="password" required ref={password} minLength="6"></Form.Control>
             </Form.Group>
             <Form.Group id="password-confirm">
               <Form.Label>Password Confirmation</Form.Label>
-              <Form.Control type="password" required ref={passwordConf}></Form.Control>
+              <Form.Control type="password" required ref={passwordConf} minLength="6"></Form.Control>
             </Form.Group>
             <Form.Group id="phoneNumber">
               <Form.Label>Phone number</Form.Label>

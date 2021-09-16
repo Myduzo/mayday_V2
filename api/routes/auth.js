@@ -1,9 +1,10 @@
 import express from "express";
 import { User } from "../models/User.js";
 import bcrypt from "bcrypt";
+//import { modelNames } from "mongoose";
 
 export const router = express.Router();
-
+/*
 //SIGN UP
 router.post("/signup", async (req, res) => {
   try {
@@ -17,7 +18,7 @@ router.post("/signup", async (req, res) => {
       lastName: req.body.lastName,
       email: req.body.email,
       password: hashedPassword,
-      phoneNumber: req.body.phoneNumber,
+      //phoneNumber: req.body.phoneNumber,
     });
 
     //save user and respond
@@ -27,21 +28,48 @@ router.post("/signup", async (req, res) => {
     res.status(500).json(err);
   }
 });
+*/
 
-//LOGIN
+
 router.post("/login", async (req, res) => {
   try {
     const user = await User.findOne({ email: req.body.email });
-    !user && res.status(404).json("user not found");
+    if (!user){
+      res.status(404).json("user not found");
+      return;
+    }
 
     const validPassword = await bcrypt.compare(
       req.body.password,
       user.password
     );
-    !validPassword && res.status(400).json("wrong password");
+    if (!validPassword){
+      res.status(400).json("wrong password");
+      return;
+    }
 
     res.status(200).json(user);
   } catch (err) {
-    res.status(500).json(err);
+      res.status(500).json(err);
   }
+});
+
+router.post("/register", async (req, res) => {
+  try{
+    const salt = await bcrypt.genSalt(10);
+    const hashedPass = await bcrypt.hash(req.body.password, salt);
+
+    const newUser = new User({
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      email: req.body.email,
+      phone: req.body.phone,
+      password: hashedPass,
+    }); 
+
+    const user = await newUser.save();
+      res.status(200).json(user);
+    } catch(err) {
+        res.status(500).json(err);
+    }
 });

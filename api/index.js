@@ -10,10 +10,9 @@ import {router as postRoute} from "./routes/posts.js";
 import path from "path";
 
 const app = express();
-const router = express.Router();
+//const router = express.Router();
 
 dotenv.config();
-
 mongoose.connect(
   process.env.MONGO_URL,
   { useNewUrlParser: true, useUnifiedTopology: true },
@@ -22,16 +21,16 @@ mongoose.connect(
   }
 );
 // app.use("/images", express.static(path.join(__dirname, "public/images")));
-
+/*
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
-
+*/  
 //middleware
 app.use(express.json());
 app.use(helmet());
 app.use(morgan("common"));
-
+/*
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "public/images");
@@ -49,6 +48,10 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
     console.error(error);
   }
 });
+app.get("/", (req, res) => {
+  res.send("AFAFAFaf");
+});
+*/
 
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);

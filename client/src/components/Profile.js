@@ -1,4 +1,4 @@
-import React from "react";
+import {React, useEffect, useState, useContext} from "react";
 import Header from "./home/Header";
 import "./Profile.css";
 import facebook from "../images/facebook.png";
@@ -9,8 +9,24 @@ import WorkOutlineRoundedIcon from '@material-ui/icons/WorkOutlineRounded';
 import LocationOnRoundedIcon from '@material-ui/icons/LocationOnRounded';
 import PhoneAndroidRoundedIcon from '@material-ui/icons/PhoneAndroidRounded';
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { AuthContext } from "../context/AuthContext";
+
+
 
 export default function Profile() {
+  const [user, setUser] = useState({});
+  //const user = useContext(AuthContext);
+  /*
+  useEffect(() => {
+    const fetchUser = async () => {
+      const res = await axios.get(`/users/${user._id}`);
+      setUser(res.data);
+      console.log(res);
+    };
+    fetchUser();
+  },[]);*/
+
   return (
     <div>
       <Header />
@@ -33,11 +49,12 @@ export default function Profile() {
           </div>
         </div>
         <div className="row">
-          <div id="emptySpace" className="col-lg-4 col-md-4"></div>
+          <div id="emptySpace" className="col-lg-4 col-md-4">
+          </div>
           <div className="pt-5 text-center col-lg-4 col-md-4 ">
-            <h2 id="profileName" className="fw-bold pb-2">John Tribiony</h2>
-            <h5 id="bioColor"><WorkOutlineRoundedIcon /> Electrician</h5>
-            <h5 id="bioColor"><LocationOnRoundedIcon />Bay Area, San Francisco, CA</h5>
+            <h2 id="profileName" className="fw-bold pb-2">{user.firstName} {user.lastName}</h2>
+            <h5 id="bioColor"><WorkOutlineRoundedIcon /> Electrician </h5>
+            <h5 id="bioColor">{user.city? <LocationOnRoundedIcon /> : ""}{user.city}</h5>
             <h5 id="bioColor"><PhoneAndroidRoundedIcon />92564871</h5>
           </div>
           <div className="float-end col-lg-4 col-md-4 profileLinks">
