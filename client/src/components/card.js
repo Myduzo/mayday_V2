@@ -10,14 +10,14 @@ export default function Cards({ post }) {
   const [user, setUser] = useState({});
 
   
-  useEffect(() => {
-    const fetchUser = async () => {
-      const res = await axios.get(`/users/${post.userId}`);
-      setUser(res.data);
-      console.log(res);
-    };
-    fetchUser();
-  },[post.userId]);
+  // useEffect(() => {
+  //   const fetchUser = async () => {
+  //     const res = await axios.get(`/users/${post.userId}`);
+  //     setUser(res.data);
+  //     console.log(res);
+  //   };
+  //   fetchUser();
+  // },[post.userId]);
   
   return (
     <div className="col-lg-4 col-md-6">

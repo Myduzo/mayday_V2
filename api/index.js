@@ -21,11 +21,11 @@ mongoose.connect(
   }
 );
 // app.use("/images", express.static(path.join(__dirname, "public/images")));
-/*
-mongoose.set('useNewUrlParser', true);
-mongoose.set('useFindAndModify', false);
-mongoose.set('useCreateIndex', true);
-*/  
+
+// mongoose.set('useNewUrlParser', true);
+// mongoose.set('useFindAndModify', false);
+// mongoose.set('useCreateIndex', true);
+
 //middleware
 app.use(express.json());
 app.use(helmet());

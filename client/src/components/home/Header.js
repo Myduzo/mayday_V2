@@ -1,8 +1,4 @@
 import React, { useContext, useState } from "react";
-import homeIcon from "../../images/homeIcon.png";
-import loginIcon from "../../images/loginIcon.png";
-import signupIcon from "../../images/signupIcon.png";
-import postsIcon from "../../images/postsIcon.png";
 import { Link } from "react-router-dom";
 import './Header.css'
 import AppsRoundedIcon from '@material-ui/icons/AppsRounded';
@@ -11,7 +7,7 @@ import MarkunreadMailboxRoundedIcon from '@material-ui/icons/MarkunreadMailboxRo
 import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
 import { AuthContext } from "../../context/AuthContext";
 import noAvatar from "../../images/noAvatar.png";
-import logo from "../../images/mayday.png"
+import logo from "../../images/mayday1.png"
 
 
 function Header() {
@@ -27,7 +23,7 @@ function Header() {
       <nav className="navbar navbar-light bg-light navbar-expand-lg fixed-top position-relative">
         <div className="container">
           <Link to="/" className="navbar-brand" href="#">
-            <img src={logo} width="100px" height="70px"/>
+            <img src={logo} width="120" />
           </Link>
           <button
             className="navbar-toggler"
@@ -85,19 +81,19 @@ function Header() {
                     About us
                   </Link>
                 </li>
-                <li class="dropdown nav-item px-1 userPic">
-                  <a class="btn dropdown-toggle position-absolute" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                <li className="dropdown nav-item px-1 userPic">
+                  <a className="btn dropdown-toggle position-absolute" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                     <img
                       src={user.profilePicture ? user.profilePicture : noAvatar}
-                      className="me-2 rounded-circle"
-                      width="43"
-                      height="43"
+                      className="mt-2 me-2 rounded-circle"
+                      width="33"
+                      height="33"
                     />
                   </a>
 
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <li><Link to={`/profile/${user.phone}`} class="dropdown-item">Profile</Link></li>
-                    <li><a class="dropdown-item" href="#" onClick={logout}>Log out</a></li>
+                  <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><Link to={`/profile/${user.phone}`} className="dropdown-item">Profile</Link></li>
+                    <li><a className="dropdown-item" href="#" onClick={logout}>Log out</a></li>
                   </ul>
                 </li>
               </ul>
