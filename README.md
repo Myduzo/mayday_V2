@@ -39,9 +39,10 @@ Users prefer to pay small fees for faster and convenient services offered by web
 MAYDAY is an on-demand services web application act as a mediator between customers and services providers for different services.
 This type of web app project idea includes household cleaning services, repair services, and other such services.
 
-
 ## ⛓️ Dependencies <a name = "dependencies"></a>
+
 ### Front-end dependencies
+
 - "@material-ui/core": "^4.12.3",
 - "@material-ui/icons": "^4.11.2",
 - "@testing-library/jest-dom": "^5.14.1",
@@ -56,6 +57,7 @@ This type of web app project idea includes household cleaning services, repair s
 - "web-vitals": "^1.1.2"
 
 ### Back-end dependencies
+
 - "bcrypt": "^5.0.1",
 - "cors": "^2.8.5",
 - "dotenv": "^8.2.0",
@@ -67,7 +69,6 @@ This type of web app project idea includes household cleaning services, repair s
 - "nodemon": "^2.0.7",
 - "path": "^0.12.7"
 
-
 ## 🚀 Future Scope <a name = "future_scope"></a>
 
 - Improve the look of web application
@@ -78,12 +79,10 @@ This type of web app project idea includes household cleaning services, repair s
 - Implement
 - Posts page of each field
 
-
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
 These instructions will get you a copy of the project up and running on your local machine for development
 and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
-
 
 ### Installing
 
@@ -94,20 +93,26 @@ cd client/
 npm install
 ```
 
-Second, do the samething with the api repository (Back-end side).
+Second, do the same thing with the api repository (Back-end side).
 
 ```
 cd api/
 npm install
 ```
 
+then create a ".env" file in the base of api folder containig MONGO_URL="", mongodb url to the Database
+
 ## 🎈 Usage <a name="usage"></a>
 
 Start the two servers at the same time as shown down below
+
 ```
 cd client/
 npm start
 ```
+
+and in the second terminal
+
 ```
 cd api/
 npm start
