@@ -13,10 +13,14 @@ export default function Signup() {
   const phoneNumber = useRef();
   const history = useHistory();
 
+
   const handleClick = async (e) => {
     e.preventDefault();
     /*if (passwordConf.current.value !== password.current.value) {
       passwordConf.current.setCustomValidity("Passwords don't match!");
+    
+    if (true) {
+      
     } else {*/
       const user = {
         firstName: firstName.current.value,
@@ -30,6 +34,7 @@ export default function Signup() {
         history.push("/login");
       } catch (err) {
         console.log(err);
+        phoneNumber.current.setCustomValidity("SomeThing is wrong");
       }
       console.log(user);
     //}

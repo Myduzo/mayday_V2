@@ -7,7 +7,8 @@ import MarkunreadMailboxRoundedIcon from '@material-ui/icons/MarkunreadMailboxRo
 import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
 import { AuthContext } from "../../context/AuthContext";
 import noAvatar from "../../images/noAvatar.png";
-import logo from "../../images/mayday1.png"
+import logo from "../../images/mayday1.png";
+import Services from "./Services";
 
 
 function Header() {
@@ -59,7 +60,6 @@ function Header() {
                     aria-current="page"
                   >
                     <HomeRoundedIcon className="me-2 mb-1" />
-
                     Home
                   </Link>
                 </li>
@@ -70,7 +70,7 @@ function Header() {
                   </Link>
                 </li>
                 <li className="nav-item px-1">
-                  <Link to="/" className="nav-link link-dark">
+                  <Link to={Services} className="nav-link link-dark">
                     <AppsRoundedIcon className="me-2 mb-1" />
                     Services
                   </Link>

@@ -77,3 +77,18 @@ router.get("/profile/:userId", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+/*get user's phone
+router.post("/phone", async (req, res) => {
+  try {
+    const user = await User.findOne({ phone: req.body.phone });
+    if (!user){
+      res.status(404).json("user not found");
+      return;
+    }
+
+    res.status(200).json(posts);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});*/

@@ -4,6 +4,8 @@ import './Footer.css'
 import facebook from "../../images/facebook.png";
 import instagram from "../../images/instagram.png";
 import twitter from "../../images/twitter.png";
+import logo from "../../images/mayday1.png"
+
 
 export default function Footer() {
   return (
@@ -14,7 +16,9 @@ export default function Footer() {
           <div className="row mx-auto">
 
             <div className="col-lg-4 col-md-6 footer-contact">
-              <h3>LOGO</h3>
+              <h3>
+                <img src={logo} width="120" />
+              </h3>
               <p>
                 Hammam-lif <br/>
                 Ben Arous <br/>
