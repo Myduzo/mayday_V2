@@ -17,7 +17,7 @@ import { AuthContext } from "../context/AuthContext";
 export default function Profile() {
   const [user, setUser] = useState({});
   //const user = useContext(AuthContext);
-  /*
+  
   useEffect(() => {
     const fetchUser = async () => {
       const res = await axios.get(`/users/${user._id}`);
@@ -25,7 +25,7 @@ export default function Profile() {
       console.log(res);
     };
     fetchUser();
-  },[]);*/
+  },[]);
 
   return (
     <div>

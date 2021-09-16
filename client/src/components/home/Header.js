@@ -11,6 +11,7 @@ import MarkunreadMailboxRoundedIcon from '@material-ui/icons/MarkunreadMailboxRo
 import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
 import { AuthContext } from "../../context/AuthContext";
 import noAvatar from "../../images/noAvatar.png";
+import logo from "../../images/mayday.png"
 
 
 function Header() {
@@ -26,7 +27,7 @@ function Header() {
       <nav className="navbar navbar-light bg-light navbar-expand-lg fixed-top position-relative">
         <div className="container">
           <Link to="/" className="navbar-brand" href="#">
-            LOGO
+            <img src={logo} width="100px" height="70px"/>
           </Link>
           <button
             className="navbar-toggler"

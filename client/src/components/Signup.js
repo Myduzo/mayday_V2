@@ -15,12 +15,9 @@ export default function Signup() {
 
   const handleClick = async (e) => {
     e.preventDefault();
-    if (passwordConf.current.value !== password.current.value) {
-      //console.log(passwordConf.current.value )
-      //console.log(password.current.value)
+    /*if (passwordConf.current.value !== password.current.value) {
       passwordConf.current.setCustomValidity("Passwords don't match!");
-      //passwordConf.current.value = "";
-    } else {
+    } else {*/
       const user = {
         firstName: firstName.current.value,
         lastName: lastName.current.value,
@@ -35,7 +32,7 @@ export default function Signup() {
         console.log(err);
       }
       console.log(user);
-    }
+    //}
   };
 
   return (

@@ -1,7 +1,7 @@
 <p align="center">
   <a href="" rel="noopener">
+ <img src="./client/src/images/maydayLogo.png" alt="Project-logo"></a>
 </p>
-<h3 align="center">MayDay</h3>
 
 <div align="center">
 
@@ -23,100 +23,104 @@
 
 - [Problem Statement](#problem_statement)
 - [Idea / Solution](#idea)
-- [Dependencies / Limitations](#limitations)
+- [Dependencies](#dependencies)
 - [Future Scope](#future_scope)
 - [Setting up a local environment](#getting_started)
 - [Usage](#usage)
 - [Technology Stack](#tech_stack)
-- [Contributing](../CONTRIBUTING.md)
 - [Authors](#authors)
-- [Acknowledgments](#acknowledgments)
 
 ## 🧐 Problem Statement <a name = "problem_statement"></a>
 
-It is useful to design and follow a specific format when writing a problem statement. While there are several options
-for doing this, the following is a simple and straightforward template often used in Business Analysis to maintain
-focus on defining the problem.
-
-- IDEAL: This section is used to describe the desired or “to be” state of the process or product. At large, this section
-  should illustrate what the expected environment would look like once the solution is implemented.
-- REALITY: This section is used to describe the current or “as is” state of the process or product.
-- CONSEQUENCES: This section is used to describe the impacts on the business if the problem is not fixed or improved upon.
-  This includes costs associated with loss of money, time, productivity, competitive advantage, and so forth.
-
-Following this format will result in a workable document that can be used to understand the problem and elicit
-requirements that will lead to a winning solution.
+Users prefer to pay small fees for faster and convenient services offered by web applications.
 
 ## 💡 Idea / Solution <a name = "idea"></a>
 
-This section is used to describe potential solutions.
+MAYDAY is an on-demand services web application act as a mediator between customers and services providers for different services.
+This type of web app project idea includes household cleaning services, repair services, and other such services.
 
-Once the ideal, reality, and consequences sections have been
-completed, and understood, it becomes easier to provide a solution for solving the problem.
 
-## ⛓️ Dependencies / Limitations <a name = "limitations"></a>
+## ⛓️ Dependencies <a name = "dependencies"></a>
+### Front-end dependencies
+- "@material-ui/core": "^4.12.3",
+- "@material-ui/icons": "^4.11.2",
+- "@testing-library/jest-dom": "^5.14.1",
+- "@testing-library/react": "^11.2.7",
+- "@testing-library/user-event": "^12.8.3",
+- "axios": "^0.21.4",
+- "react": "^17.0.2",
+- "react-bootstrap": "^1.6.3",
+- "react-dom": "^17.0.2",
+- "react-router-dom": "^5.3.0",
+- "react-scripts": "4.0.3",
+- "web-vitals": "^1.1.2"
 
-- What are the dependencies of your project?
-- Describe each limitation in detailed but concise terms
-- Explain why each limitation exists
-- Provide the reasons why each limitation could not be overcome using the method(s) chosen to acquire.
-- Assess the impact of each limitation in relation to the overall findings and conclusions of your project, and if
-  appropriate, describe how these limitations could point to the need for further research.
+### Back-end dependencies
+- "bcrypt": "^5.0.1",
+- "cors": "^2.8.5",
+- "dotenv": "^8.2.0",
+- "express": "^4.17.1",
+- "helmet": "^4.4.1",
+- "mongoose": "^5.12.2",
+- "morgan": "^1.10.0",
+- "multer": "^1.4.2",
+- "nodemon": "^2.0.7",
+- "path": "^0.12.7"
+
 
 ## 🚀 Future Scope <a name = "future_scope"></a>
 
-Write about what you could not develop during the course of the Hackathon; and about what your project can achieve
-in the future.
+- Improve the look of web application
+- Add Messenger
+- Add video chat
+- Add online payment
+- Add online booking
+- Implement
+- Posts page of each field
+
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
 These instructions will get you a copy of the project up and running on your local machine for development
 and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
 
-### Prerequisites
-
-What things you need to install the software and how to install them.
-
-```
-Give examples
-```
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running.
-
-Say what the step will be
+At first, you need to pass these commands in the terminal so all dependencies get installed in your client repository (Front-end side).
 
 ```
-Give the example
+cd client/
+npm install
 ```
 
-And repeat
+Second, do the samething with the api repository (Back-end side).
 
 ```
-until finished
+cd api/
+npm install
 ```
 
 ## 🎈 Usage <a name="usage"></a>
 
-Add notes about how to use the system.
+Start the two servers at the same time as shown down below
+```
+cd client/
+npm start
+```
+```
+cd api/
+npm start
+```
 
 ## ⛏️ Built With <a name = "tech_stack"></a>
 
 - [MongoDB](https://www.mongodb.com/) - Database
 - [Express](https://expressjs.com/) - Server Framework
-- [VueJs](https://vuejs.org/) - Web Framework
+- [React](https://reactjs.org/) - Front-end JavaScript library
 - [NodeJs](https://nodejs.org/en/) - Server Environment
 
 ## ✍️ Authors <a name = "authors"></a>
 
-- [@kylelobo](https://github.com/kylelobo) - Idea & Initial work
-
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors)
-who participated in this project.
-
-## 🎉 Acknowledgments <a name = "acknowledgments"></a>
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- References
+- [Yosri Bouabid](https://github.com/Yosri-ctrl) - Back end
+- [Youssef Sahli](https://github.com/Myduzo) - Front end
