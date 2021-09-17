@@ -5,6 +5,7 @@ import Header from "./home/Header";
 import Cards from "./card";
 import { AuthContext } from "../context/AuthContext";
 import noAvatar from "../images/noAvatar.png";
+import Select from 'react-select'; 
 
 
 export default function Posts({ userId }) {
@@ -16,7 +17,8 @@ export default function Posts({ userId }) {
     e.preventDefault();
     const newPost = {
       userId: user._id,
-      desc: desc.current.value
+      desc: desc.current.value,
+      service: selectedOption
     }
 
     try{
@@ -39,7 +41,18 @@ export default function Posts({ userId }) {
       //console.log(res)
     };
     fetchPosts();
-  }, [userId]);
+  }, []);
+
+  const [selectedOption, setSelectedOption] = useState("none");
+  const options = [
+    { value: "1", label: "Electrical" },
+    { value: "2", label: "Cleaning" },
+    { value: "3", label: "Plumbing" },
+    { value: "4", label: "Babysitting" },
+  ];
+  const handleTypeSelect = e => {
+    setSelectedOption(e.value);
+  };
 
   return (
     <div>
@@ -54,16 +67,24 @@ export default function Posts({ userId }) {
                   <div className="list-inline d-flex align-items-center">
                     <img src={user.porfilePicture ? user.porfilePicture : noAvatar} width="30px" />
                     <h5 className="fw-bold ps-3 me-auto">Create new post</h5>
-                    <div className="dropdown text-right">
-                      <button className="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        Field
-                      </button>
-                      <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <div className="dropdown text-right" style={{width: '200px'}} >
+                      {/* <button className="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="true">
+                        
+                      </button> */}
+                      {/* <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1" ref={service}>
                         <li><a className="dropdown-item" href="#">Electrical</a></li>
                         <li><a className="dropdown-item" href="#">Cleaning</a></li>
                         <li><a className="dropdown-item" href="#">Plumbing</a></li>
                         <li><a className="dropdown-item" href="#">Babysitting</a></li>
-                      </ul>
+                      </ul> */}
+                      <Select
+                        options={options}
+                        onChange={handleTypeSelect}
+                        value={options.filter(function(option) {
+                          return option.value === selectedOption;
+                        })}
+                        label="Service"
+                      />
                     </div>
                   </div>
                   <textarea className="form-control" placeholder={"What's in your mind " + user.firstName + " ?"} ref={desc}></textarea>

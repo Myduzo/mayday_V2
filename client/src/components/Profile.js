@@ -67,14 +67,16 @@ export default function Profile() {
           <div className="float-end col-lg-4 col-md-4 profileLinks">
             <a href="#" className="d-flex justify-content-center text-decoration-none text-dark">
               <img src={facebook} className="me-2" width="20px" height="20px" /
-              ><p>Johntribiony</p>
+              ><p>{user.firstName}{user.lastName}</p>
             </a>
             <a href="#" className="d-flex justify-content-center text-decoration-none text-dark">
-              <img src={instagram} className="me-2" width="20px" height="20px" /><p>Johntribiony59</p>
+              <img src={instagram} className="me-2" width="20px" height="20px" /><p>
+                {user.firstName}{user.lastName}
+              </p>
             </a>
             <a href="#" className="d-flex justify-content-center text-decoration-none text-dark">
               <img src={twitter} className="me-2" width="20px" height="20px" /
-              ><p>@Johntribiony</p>
+              ><p>@{user.firstName}{user.lastName}</p>
             </a>
           </div>
           <div className="links text-center pt-3">

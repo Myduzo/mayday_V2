@@ -1,9 +1,10 @@
-import React, { useContext, useRef } from "react";
-import { Form, Button, Card } from "react-bootstrap";
+import React, { useContext, useRef, useState} from "react";
+import { Form, Button, Card, Alert} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { loginCall } from "../apiCalls";
 import { AuthContext } from "../context/AuthContext";
 import { CircularProgress } from "@material-ui/core"
+
 
 export default function Login() {
   const { user, isFetching, error, dispatch } = useContext(AuthContext);
@@ -12,10 +13,14 @@ export default function Login() {
 
   const handleClick = (e) => {
     e.preventDefault();
-    loginCall(
+    try {
+      loginCall(
       { email: email.current.value, password: password.current.value },
       dispatch
     );
+    } catch(err) {
+      console.log(err);
+    } 
   };
   console.log(user)
 
@@ -31,7 +36,7 @@ export default function Login() {
       >
         <Card.Body>
           <h2 className="text-center mb-4">Login</h2>
-          {/* {error && <Alert variant="danger">{error}</Alert>} */}
+          {error && <Alert variant="danger">{"Failed to logIn"}</Alert>}
           <Form onSubmit={handleClick}>
             <Form.Group id="email">
               <Form.Label>Email</Form.Label>
