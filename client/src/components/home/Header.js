@@ -8,7 +8,6 @@ import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
 import { AuthContext } from "../../context/AuthContext";
 import noAvatar from "../../images/noAvatar.png";
 import logo from "../../images/mayday1.png";
-import Services from "./Services";
 
 
 function Header() {
@@ -18,6 +17,13 @@ function Header() {
     localStorage.clear();
     window.location.href = '/';
   }
+
+  const scrollToService = () => {
+    window.scrollTo(0, 610);
+  };
+  const scrollToAbout = () => {
+    window.scrollTo(0, 1370);
+  };
 
   return (
     <div>
@@ -70,15 +76,23 @@ function Header() {
                   </Link>
                 </li>
                 <li className="nav-item px-1">
-                  <Link to={Services} className="nav-link link-dark">
+                  <Link to="" className="nav-link link-dark">
                     <AppsRoundedIcon className="me-2 mb-1" />
-                    Services
+                    <button 
+                    onClick={scrollToService}
+                    style={{background: "none", color: "inherit", border: "none",}}>
+                      Services
+                    </button>
                   </Link>
                 </li>
                 <li className="nav-item px-1">
                   <Link to="/" className="nav-link link-dark">
                     <PeopleAltRoundedIcon className="me-2 mb-1" />
-                    About us
+                    <button 
+                    onClick={scrollToAbout}
+                    style={{background: "none", color: "inherit", border: "none",}}>
+                      About us
+                    </button>
                   </Link>
                 </li>
                 <li className="dropdown nav-item px-1 userPic">
