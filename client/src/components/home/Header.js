@@ -106,7 +106,7 @@ function Header() {
                   </a>
 
                   <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <li><Link to={`/profile/${user.phone}`} className="dropdown-item">Profile</Link></li>
+                    <li><Link to={`/profile/${user._id}`} className="dropdown-item">Profile</Link></li>
                     <li><a className="dropdown-item" href="#" onClick={logout}>Log out</a></li>
                   </ul>
                 </li>

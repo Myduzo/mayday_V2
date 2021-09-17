@@ -10,19 +10,26 @@ import LocationOnRoundedIcon from '@material-ui/icons/LocationOnRounded';
 import PhoneAndroidRoundedIcon from '@material-ui/icons/PhoneAndroidRounded';
 import { Link } from "react-router-dom";
 import axios from "axios";
+import noAvatar from "../images/noAvatar.png"
 import { AuthContext } from "../context/AuthContext";
 
 
 
 export default function Profile() {
   const [user, setUser] = useState({});
-  //const user = useContext(AuthContext);
+  // const user = useContext(AuthContext);
   
   useEffect(() => {
     const fetchUser = async () => {
-      const res = await axios.get(`/users/${user._id}`);
-      setUser(res.data);
-      console.log(res);
+      try {
+        const id = window.location.pathname.split("/");
+        console.log(id[2]);
+        const res = await axios.get(`/users/${id[2]}`);
+        setUser(res.data);
+        console.log(res.data);
+      } catch(err) {
+        console.log(err)
+      }
     };
     fetchUser();
   },[]);
@@ -35,7 +42,7 @@ export default function Profile() {
         <div id="profileCover"></div>
         <div className="position-absolute top-0 start-50 translate-middle profilePic">
           <img
-            src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDB8fGZhY2V8ZW58MHwyfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+            src={user.profilePicture ? user.profilePicture : noAvatar}
             className="position-absolute rounded-circle"
             width="200"
             height="200"
@@ -55,7 +62,7 @@ export default function Profile() {
             <h2 id="profileName" className="fw-bold pb-2">{user.firstName} {user.lastName}</h2>
             <h5 id="bioColor"><WorkOutlineRoundedIcon /> Electrician </h5>
             <h5 id="bioColor">{user.city? <LocationOnRoundedIcon /> : ""}{user.city}</h5>
-            <h5 id="bioColor"><PhoneAndroidRoundedIcon />92564871</h5>
+            <h5 id="bioColor"><PhoneAndroidRoundedIcon />{user.phone}</h5>
           </div>
           <div className="float-end col-lg-4 col-md-4 profileLinks">
             <a href="#" className="d-flex justify-content-center text-decoration-none text-dark">
