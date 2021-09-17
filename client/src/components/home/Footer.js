@@ -8,6 +8,13 @@ import logo from "../../images/mayday1.png"
 
 
 export default function Footer() {
+  const scrollToService = () => {
+    window.scrollTo(0, 610);
+  };
+  const scrollToAbout = () => {
+    window.scrollTo(0, 1370);
+  };
+
   return (
     <footer id="footer">
 
@@ -32,9 +39,25 @@ export default function Footer() {
               <h4>Links</h4>
               <ul>
                 <li><i className="bx bx-chevron-right"></i> <Link to="/">Home</Link></li>
-                <li><i className="bx bx-chevron-right"></i> <Link to="/services">Services</Link></li>
-                <li><i className="bx bx-chevron-right"></i> <Link to="/aboutus">About us</Link></li>
-                <li><i className="bx bx-chevron-right"></i> <Link to="/posts">Posts</Link></li>
+                <li><i className="bx bx-chevron-right"></i>
+                  <Link to="">
+                    <button 
+                      onClick={scrollToService}
+                      style={{background: "none", color: "inherit", border: "none",}}>
+                        Services
+                    </button>
+                  </Link>
+                </li>
+                <li><i className="bx bx-chevron-right"></i>
+                  <Link to="">
+                    <button 
+                    onClick={scrollToAbout}
+                    style={{background: "none", color: "inherit", border: "none",}}>
+                      About us
+                    </button>
+                  </Link>
+                </li>
+                <li><i className="bx bx-chevron-right" ></i> <Link to="/posts">Posts</Link></li>
               </ul>
             </div>
 
