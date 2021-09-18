@@ -21,7 +21,7 @@ body #posts {
 #posts .card {
   padding: 2.5rem 2rem;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, .5);
+  background-color: #F4EAE6;
   max-width: 500px;
   box-shadow: 0 0 30px rgba(0, 0, 0, .15);
   margin: 1rem;
@@ -46,7 +46,7 @@ body #posts {
 #posts .card::after {
   height: 15rem;
   width: 15rem;
-  background-color: #4172f5aa;
+  background-color: #4297A0;
   top: -8rem;
   right: -8rem;
   box-shadow: 2rem 6rem 0 -3rem #FFF

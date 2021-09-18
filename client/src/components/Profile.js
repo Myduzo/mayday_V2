@@ -51,8 +51,13 @@ export default function Profile() {
             <rect width="100%" height="100%" fill="#FFF" />
           </svg>
           <div id="profileRate" className="text-center">
-            <StarRoundedIcon id="rate" />
-            <h5>4.5</h5>
+            <div id="topRate">
+              <StarRoundedIcon id="rate" />
+              <h5 className="text-white">4.5</h5>
+            </div>
+            <svg id="backRate" className="rounded-circle position-absolute" width="70" height="70">
+              <rect width="100%" height="100%" fill="#2F5061" />
+            </svg>
           </div>
         </div>
         <div className="row" style={{"--bs-gutter-x": "0rem" }}>

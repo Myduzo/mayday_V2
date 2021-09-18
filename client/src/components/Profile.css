@@ -1,3 +1,8 @@
+/* body #profile {
+  min-height: 100vh;
+  background-color: #F4EAE6;
+} */
+
 #profileCover {
   background-color: #2F5061;
   padding-bottom: 15rem;
@@ -32,6 +37,16 @@
 #profileRate h5 {
   margin-top: -5px;
   margin-left: 10rem;
+}
+
+#backRate {
+  margin-top: -4.3rem;
+  margin-left: 2.5rem;
+}
+
+#topRate {
+  position: relative;
+  z-index: 99;
 }
 
 #profile .links button {

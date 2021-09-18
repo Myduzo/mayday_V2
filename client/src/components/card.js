@@ -45,8 +45,11 @@ export default function Cards({ post }) {
         </div>
           <div className="infos pt-3">
             <div className="name">
-              <h2>{user.firstName} {user.lastName}</h2>
-              <h4> {serviceType()}</h4>
+              <div className="d-flex align-items-center">
+                <h2 className="me-auto">{user.firstName} {user.lastName}</h2> 
+                {serviceType() ? <button className="btn mb-2 mb-md-0 text-right text-white" style={{ backgroundColor: "#2F5061", cursor: "auto" }}>{serviceType()}</button> 
+                : <></> }
+              </div>  
               <h4>{moment(post.createdAt).fromNow()}</h4>
             </div>
             <p className="text"><b>Desc: </b>{post.desc}</p>
