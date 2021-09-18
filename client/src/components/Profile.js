@@ -55,7 +55,7 @@ export default function Profile() {
             <h5>4.5</h5>
           </div>
         </div>
-        <div className="row">
+        <div className="row" style={{"--bs-gutter-x": "0rem" }}>
           <div id="emptySpace" className="col-lg-4 col-md-4">
           </div>
           <div className="pt-5 text-center col-lg-4 col-md-4 ">

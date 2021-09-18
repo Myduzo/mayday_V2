@@ -7,6 +7,8 @@ import multer from "multer";
 import {router as userRoute} from "./routes/users.js";
 import {router as authRoute} from "./routes/auth.js";
 import {router as postRoute} from "./routes/posts.js";
+import {router as conversationRoute} from "./routes/conversations.js";
+import {router as messageRoute} from "./routes/messages.js";
 import path from "path";
 
 const app = express();
@@ -56,6 +58,9 @@ app.get("/", (req, res) => {
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
+app.use("/api/conversations", conversationRoute);
+app.use("/api/messages", messageRoute);
+
 
 app.listen(8800, () => {
   console.log("Backend server is running!");
