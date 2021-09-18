@@ -18,6 +18,22 @@ export default function Cards({ post }) {
     };
     fetchUser();
   },[post.userId]);
+
+  const serviceType = () => {
+    let service = "";
+    switch(post.service) {
+      case 1: service = "Electrical"
+        break;
+      case 2: service = "Cleaning"
+        break;
+      case 3: service = "Plumbing"
+        break;
+      case 4: service = "Babysitting"
+        break;
+      default: service = ""
+    }
+    return service;
+  }
   
   return (
     <div className="col-lg-4 col-md-6">
@@ -30,7 +46,7 @@ export default function Cards({ post }) {
           <div className="infos pt-3">
             <div className="name">
               <h2>{user.firstName} {user.lastName}</h2>
-
+              <h4> {serviceType()}</h4>
               <h4>{moment(post.createdAt).fromNow()}</h4>
             </div>
             <p className="text"><b>Desc: </b>{post.desc}</p>
