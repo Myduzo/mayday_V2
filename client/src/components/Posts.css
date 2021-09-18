@@ -150,3 +150,10 @@ body #posts {
     border-top-color: #e9eaed;
 }
 
+#descBox {
+  max-width: 500px;
+  background-color: white;
+  border: 2px solid #4297A0;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}

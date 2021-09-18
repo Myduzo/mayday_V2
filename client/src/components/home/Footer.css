@@ -76,3 +76,6 @@
   color: #E57F84;
 }
 
+.footer-links ul a {
+  text-decoration: none;
+}

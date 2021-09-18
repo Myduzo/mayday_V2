@@ -52,7 +52,12 @@ export default function Cards({ post }) {
               </div>  
               <h4>{moment(post.createdAt).fromNow()}</h4>
             </div>
-            <p className="text"><b>Desc: </b>{post.desc}</p>
+            <div id="descBox">
+              <div className="card-body">
+                {post.desc}
+              </div>
+            </div>
+            {/* <p className="text"><b>Desc: </b>{post.desc}</p> */}
             <div className="links ms-4">
               <Link to={`profile/${user._id}`}>
                 <button className="view ms-5">View profile</button>

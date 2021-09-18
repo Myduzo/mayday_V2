@@ -38,36 +38,20 @@ export default function Footer() {
             <div className="col-lg-4 col-md-6 footer-links">
               <h4>Links</h4>
               <ul>
-                <li><i className="bx bx-chevron-right"></i> <Link to="/">Home</Link></li>
-                <li><i className="bx bx-chevron-right"></i>
-                  <Link to="">
-                    <button 
-                      onClick={scrollToService}
-                      style={{background: "none", color: "inherit", border: "none",}}>
-                        Services
-                    </button>
-                  </Link>
-                </li>
-                <li><i className="bx bx-chevron-right"></i>
-                  <Link to="">
-                    <button 
-                    onClick={scrollToAbout}
-                    style={{background: "none", color: "inherit", border: "none",}}>
-                      About us
-                    </button>
-                  </Link>
-                </li>
-                <li><i className="bx bx-chevron-right" ></i> <Link to="/posts">Posts</Link></li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="" onClick={scrollToService}>Services</Link></li>
+                <li><Link to="" onClick={scrollToAbout}>About us</Link></li>
+                <li><Link to="/posts">Posts</Link></li>
               </ul>
             </div>
 
             <div className="col-lg-4 col-md-6 footer-links">
               <h4>Our Services</h4>
               <ul>
-                <li><i className="bx bx-chevron-right"></i> <Link to="/services">Electrical</Link></li>
-                <li><i className="bx bx-chevron-right"></i> <Link to="/services">Cleaning</Link></li>
-                <li><i className="bx bx-chevron-right"></i> <Link to="/services">Plumbing</Link></li>
-                <li><i className="bx bx-chevron-right"></i> <Link to="/services">Babysitter</Link></li>
+                <li><Link to="/posts">Electrical</Link></li>
+                <li><Link to="/posts">Cleaning</Link></li>
+                <li><Link to="/posts">Plumbing</Link></li>
+                <li><Link to="/posts">Babysitter</Link></li>
               </ul>
             </div>
 
