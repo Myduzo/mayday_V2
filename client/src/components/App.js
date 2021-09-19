@@ -16,7 +16,7 @@ import { AuthContext } from "../context/AuthContext";
 function App() {
   const { user } = useContext(AuthContext);
   return (
-    <div className="App">
+    <>
       <Router>
         <Switch>
           <Route exact path="/" component={Home}>
@@ -35,7 +35,7 @@ function App() {
           <Route path="/messenger" component={Messenger}></Route>
         </Switch>
       </Router>
-    </div>
+    </>
   );
 }
 

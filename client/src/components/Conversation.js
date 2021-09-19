@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./Conversation.css";
 import axios from "axios";
 import noAvatar from "../images/noAvatar.png"
 
@@ -23,7 +22,7 @@ export default function Conversation({ conversation, currentUser }) {
   }, [currentUser, conversation]);
 
   return (
-    <div className="tags">
+    <div className="tags" style={{ cursor: "pointer"}}>
       <img src={user?.profilePicture ? user?.profilePicture : noAvatar} alt="" />
       <span className="">{user?.firstName} {user?.lastName}</span>
     </div>

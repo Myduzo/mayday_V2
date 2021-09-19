@@ -1,8 +1,7 @@
 body #frame {
-  display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 95vh;
   font-size: 1em;
   letter-spacing: 0.1px;
   color: #32465a;
@@ -18,10 +17,11 @@ body #frame {
   background: #e6eaea;
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 740px) {
   #frame {
     width: 100%;
     height: 100vh;
+    padding-bottom: 5rem;
   }
 }
 
@@ -64,6 +64,13 @@ body #frame {
 #frame .contact-profile p {
   float: left;
 }
+
+@media screen and (max-width: 740px) {
+	#frame .contact-profile {
+    width: 100%;
+  }
+}
+
 
 #frame .content .messages {
   margin-left: -3rem;
