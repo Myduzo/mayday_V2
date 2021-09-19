@@ -64,9 +64,9 @@ export default function Messenger() {
     scrollRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  useEffect(() => {
-    setSocket(io("ws://localhost:8900"));
-  }, []);
+  // useEffect(() => {
+  //   setSocket(io("ws://localhost:8900"));
+  // }, []);
 
   return (
     <>

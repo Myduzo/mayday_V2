@@ -1,6 +1,6 @@
 import axios from "axios";
-import React, { useRef } from "react";
-import { Form, Button, Card } from "react-bootstrap";
+import React, { useRef, useState} from "react";
+import { Form, Button, Card, Alert} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router";
 
@@ -13,15 +13,15 @@ export default function Signup() {
   const phoneNumber = useRef();
   const history = useHistory();
 
+  const [err, setErr] = useState("");
+  const [load, setLoad] = useState(false);
+
 
   const handleClick = async (e) => {
     e.preventDefault();
-    /*if (passwordConf.current.value !== password.current.value) {
-      passwordConf.current.setCustomValidity("Passwords don't match!");
-    
-    if (true) {
-      
-    } else {*/
+    if (passwordConf.current.value !== password.current.value) {
+      return setErr("Passwords don't match!");
+    } else {
       const user = {
         firstName: firstName.current.value,
         lastName: lastName.current.value,
@@ -30,14 +30,17 @@ export default function Signup() {
         password: password.current.value,
       };
       try {
+        setErr("");
+        setLoad(true)
         await axios.post("/auth/register", user);
         history.push("/login");
       } catch (err) {
         console.log(err);
-        phoneNumber.current.setCustomValidity("SomeThing is wrong");
+        setErr("Failed to create account");
       }
+      setLoad(false);
       console.log(user);
-    //}
+    }
   };
 
   return (
@@ -51,7 +54,7 @@ export default function Signup() {
       >
         <Card.Body>
           <h2 className="text-center mb-4">Sign up</h2>
-          {/* {error && <Alert variant="danger">{error}</Alert>} */}
+          {err && <Alert variant="danger">{err}</Alert>}
           <Form onSubmit={handleClick}>
             <Form.Group id="firstName">
               <Form.Label>First name</Form.Label>
@@ -80,6 +83,7 @@ export default function Signup() {
             <Button
               className="d-flex justify-content-center align-items-center w-50 mt-4 mx-auto"
               type="submit"
+              disabled={load} 
             >
               Sign Up
             </Button>

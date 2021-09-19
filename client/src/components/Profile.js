@@ -23,10 +23,10 @@ export default function Profile() {
     const fetchUser = async () => {
       try {
         const id = window.location.pathname.split("/");
-        console.log(id[2]);
+        // console.log(id[2]);
         const res = await axios.get(`/users/${id[2]}`);
         setUser(res.data);
-        console.log(res.data);
+        // console.log(res.data);
       } catch(err) {
         console.log(err)
       }
@@ -85,7 +85,7 @@ export default function Profile() {
             </a>
           </div>
           <div className="links text-center pt-3">
-            <Link to="/messenger">
+            <Link to="/messenger" userId={user._id}>
               <button className="view">Messenger</button>
             </Link>
           </div>
