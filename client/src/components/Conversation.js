@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from "react";
-import "./Messenger.css";
+import "./Conversation.css";
+import axios from "axios";
+import noAvatar from "../images/noAvatar.png"
+
 
 export default function Conversation({ conversation, currentUser }) {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({});
 
   useEffect(() => {
     const friendId = conversation.members.find((m) => m !== currentUser._id);
 
     const getUser = async () => {
       try {
-        const res = await axios("/users?userId=" + friendId);
-        console.log(res);
+        const res = await axios("/users/" + friendId);
+        setUser(res.data);
+        // console.log(user.firstName);
       } catch (err) {
         console.log(err);
       }
@@ -19,9 +23,9 @@ export default function Conversation({ conversation, currentUser }) {
   }, [currentUser, conversation]);
 
   return (
-    <>
-      <img src="http://emilcarlsson.se/assets/harveyspecter.png" alt="" />
-      <p>Harvey Specter</p>
-    </>
+    <div className="tags">
+      <img src={user?.profilePicture ? user?.profilePicture : noAvatar} alt="" />
+      <span className="">{user?.firstName} {user?.lastName}</span>
+    </div>
   );
 }
