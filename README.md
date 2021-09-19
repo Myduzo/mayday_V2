@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img src="./client/src/images/maydayLogo.png" alt="Project-logo"></a>
+ <img src="./client/src/images/mayday1.png" alt="Project-logo"></a>
 </p>
 
 <div align="center">
@@ -15,8 +15,9 @@
 
 ---
 
-<p align="center"> Few lines describing your project.
-    <br> 
+<p align="center"> MAYDAY is an on-demand services web application act as a mediator between customers and services providers for different services.
+    <br>
+
 </p>
 
 ## 📝 Table of Contents
