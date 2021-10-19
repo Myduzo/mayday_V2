@@ -8,10 +8,12 @@ import noAvatar from "../images/noAvatar.png";
 import Select from 'react-select'; 
 
 
-export default function Posts({ userId }) {
+export default function Posts() {
   const [posts, setPosts] = useState([]);
   const { user } = useContext(AuthContext);
   const desc = useRef();
+  // console.log(user);
+
   
   const submitHundler = async (e) => {
     e.preventDefault();
@@ -106,124 +108,6 @@ export default function Posts({ userId }) {
         </div>
 
 
-
-
-        {/*}
-          <div className="col-lg-4 col-md-6">
-            <div className="card d-flex">
-              <div className="img">
-                <img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDB8fGZhY2V8ZW58MHwyfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
-              </div>
-              <div className="infos pt-3">
-                <div className="name">
-                  <h2>sdfdsfsfs</h2>
-                  <h4>2 days ago</h4>
-                </div>
-                <p className="text"><b>Description: </b> I can fix any electrical issue</p>
-                <div className="links ms-4">
-                  <button className="view ms-5">View profile</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-
-          <div className="col-lg-4 col-md-6">
-            <div className="card d-flex">
-              <div className="img">
-                <img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDB8fGZhY2V8ZW58MHwyfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
-              </div>
-              <div className="infos pt-3">
-                <div className="name">
-                  <h2>John Tribiony</h2>
-                  <h4>2 days ago</h4>
-                </div>
-                <p className="text"><b>Description: </b> I can fix any electrical issue</p>
-                <div className="links ms-4">
-                  <button className="view ms-5">View profile</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6">
-            <div className="card d-flex">
-              <div className="img">
-                <img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDB8fGZhY2V8ZW58MHwyfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
-              </div>
-              <div className="infos pt-3">
-                <div className="name">
-                  <h2>John Tribiony</h2>
-                  <h4>2 days ago</h4>
-                </div>
-                <p className="text"><b>Description: </b> I can fix any electrical issue</p>
-                <div className="links ms-4">
-                  <button className="view ms-5">View profile</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6">
-            <div className="card d-flex">
-              <div className="img">
-                <img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDB8fGZhY2V8ZW58MHwyfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
-              </div>
-              <div className="infos pt-3">
-                <div className="name">
-                  <h2>John Tribiony</h2>
-                  <h4>2 days ago</h4>
-                </div>
-                <p className="text"><b>Description: </b> I can fix any electrical issue</p>
-                <div className="links ms-4">
-                  <button className="view ms-5">View profile</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6">
-            <div className="card d-flex">
-              <div className="img">
-                <img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDB8fGZhY2V8ZW58MHwyfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
-              </div>
-              <div className="infos pt-3">
-                <div className="name">
-                  <h2>John Tribiony</h2>
-                  <h4>2 days ago</h4>
-                </div>
-                <p className="text"><b>Description: </b> I can fix any electrical issue</p>
-                <div className="links ms-4">
-                  <button className="view ms-5">View profile</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        { <div className="row mx-auto pt-5">
-          {postList.map((val) => {
-            return (
-              <div className="col-lg-4 col-md-6">
-                <div className="card d-flex">
-                  <div className="img">
-                    <img src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDB8fGZhY2V8ZW58MHwyfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
-                  </div>
-                  <div className="infos pt-3">
-                    <div className="name">
-                      <h2>{val.postName}</h2>
-                      <h4>2 days ago</h4>
-                    </div>
-                    <p className="text">{val.postDescription}</p>
-                    <div className="links ms-4">
-                      <button className="view ms-5">View profile</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>}
-      </div>
-      {*/}
       </div>
     </div>
   );

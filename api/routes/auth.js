@@ -4,31 +4,6 @@ import bcrypt from "bcrypt";
 //import { modelNames } from "mongoose";
 
 export const router = express.Router();
-/*
-//SIGN UP
-router.post("/signup", async (req, res) => {
-  try {
-    //generate new password
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(req.body.password, salt);
-
-    //create new user
-    const newUser = new User({
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      email: req.body.email,
-      password: hashedPassword,
-      //phoneNumber: req.body.phoneNumber,
-    });
-
-    //save user and respond
-    const user = await newUser.save();
-    res.status(200).json(user);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-*/
 
 
 router.post("/login", async (req, res) => {
