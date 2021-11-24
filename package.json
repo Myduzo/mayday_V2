@@ -1,0 +1,23 @@
+{
+  "name": "mayday",
+  "version": "1.0.0",
+  "description": "<p align=\"center\">\r   <a href=\"\" rel=\"noopener\">\r  <img src=\"./client/src/images/mayday1.png\" alt=\"Project-logo\"></a>\r </p>",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"cd api && npm run dev\" \"cd client && npm start\" ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://Yosri-ctrl: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@github.com/Yosri-ctrl/mayday_V2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yosri-ctrl/mayday_V2/issues"
+  },
+  "homepage": "https://github.com/Yosri-ctrl/mayday_V2#readme",
+  "devDependencies": {
+    "concurrently": "^6.4.0"
+  }
+}
